@@ -17,13 +17,16 @@ Kafka serves as the data streaming platform. A Kafka producer component is respo
 ### Apache Spark Structured Streaming
 Spark Structured Streaming is used for real-time data processing. It consumes weather data from Kafka topics, and computes various statistics, such as average temperature, wind speed, humidity, and pressure.
 
-## Installation
+## Getting Started
 
 ### Prerequisites
 - **Java Development Kit** (JDK) installed on your machine.
 - Download and extract **Kafka**: [https://kafka.apache.org/downloads](https://kafka.apache.org/downloads)
+- Generate your own OpenWeather API key: [https://openweathermap.org/](https://openweathermap.org/)
 
 ### Run the app
+- Create a `.env` file in the project root and add your OpenWeather API key:
+
 - Start a Zookeeper instance:
 ```
 cd /path/to/kafka
@@ -37,6 +40,7 @@ bin/kafka-server-start.sh config/server.properties
 
 - Install dependencies and run the app:
 ```
+cd /path/to/weather-data-stream
 pip install -r requirements.txt
 python main.py
 python weather_data_streaming.py
